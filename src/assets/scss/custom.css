@@ -1,0 +1,139 @@
+
+
+.bg-1{
+    background-image: url("../images/two.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+.text-size{
+    font-size: 2.75rem;
+}
+.wave-img
+{
+    height: auto;
+    width: 100%; 
+}
+.img-logosize{
+    width: 15%;
+    height: 15%;
+}
+.food-img{
+    width: auto;
+    height: 175px;
+}
+.img-size{
+  
+    width: 10%;
+}
+.header{
+    background-color: rgb(252, 252, 252)
+}
+.header2{
+    background-color: transparent
+}
+.bg-2{
+    background-color: #f2f2f2;
+}
+
+.footer-size {
+    height: 38%;
+    width: 38%;
+}
+.restorents-bg{
+    background-image: url("../images/restorents1.jpg");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh ;
+    position:relative;
+}
+.restorents1-bg{
+    background-image: url("../images/pizza1.jpg");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh ;
+    position:relative;
+}
+.rest-size{
+    float: left;
+    margin-top: -31px;
+    margin-right: 15px;
+    width: 170px;
+    background: #f3f5ff;
+    border-radius: 50% 50% 0% 0%;
+}
+
+.rest-size1 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 0% 0%;
+    border: 5px solid #fff;
+    border-bottom: 0px;
+    position: relative;
+    z-index: 1;
+}
+
+.readless{
+    color: #231900 !important;
+    cursor: pointer;
+    font-size: 14px !important;
+    font-weight: bold;
+}
+.ice{
+    width: 170px;
+}
+
+.iceimg{
+    width: 100%;
+    height: 100%;
+}
+.myquantity{
+    height: 37px;
+    font-size: 15px;
+    background-color: #f3f5ff;
+    padding: 0px 2px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    width: 160px;
+    display: flex;
+}
+.text-color{
+    color:#071c1f;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.detail-hover:hover{
+  color: white;
+  background-color: #071c1f;
+  transition: ease-in-out .5s;
+}
+
+  
+.light{
+    background-color: rgb(136, 131, 131);
+    color: black;
+    transition: .3s ease-in-out;
+}
+.trans{
+    background-color:transparent;
+    transition: .3s ease-in-out;
+    color: black;
+
+}
+@media only screen and (max-width: 990px)  {
+    .trans{
+    background-color: rgb(136, 131, 131);
+    transition: .3s ease-in-out;
+}}
+
+.css-1k88rtw{
+    padding-top: 30%;
+    height: calc(100vh - 88px);
+    width: 280px;
+    min-width: 280px;
+}
