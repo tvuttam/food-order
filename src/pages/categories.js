@@ -12,7 +12,7 @@ import {
   Button,
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import Order from "../components/order";
+import { Order } from "../components/index";
 import Card from "react-bootstrap/Card";
 import InputGroup from "react-bootstrap/InputGroup";
 import OrderButton from "./orderbutton";
@@ -56,11 +56,19 @@ export default function Categories() {
 
   const handleImage = async (item) => {
     console.log("item--->", item);
-    const productimg = await axios.get(
-      `${process.env.REACT_APP_API_URL}/get/${item}`,
-      config
-    );
-    return productimg;
+
+    const img = await axios
+      .get(`${process.env.REACT_APP_API_URL}/user/get/${item}`, config)
+      .then((response) => {
+        console.log("response", response);
+        if (response.status === 200) {
+          return response;
+        } else {
+          console.error("error");
+        }
+      });
+    console.log("img", img);
+    return img.data;
   };
 
   return (
@@ -68,7 +76,7 @@ export default function Categories() {
       <Header />
       <ToastContainer
         position="top-center"
-        autoClose={5000}
+        autoClose={2000}
         hideProgressBar
         newestOnTop={false}
         closeOnClick
@@ -130,7 +138,7 @@ export default function Categories() {
                       <Col lg="3">
                         <Image
                           className="img-fluid"
-                          src={handleImage(item.product_pic)}
+                          src={`${handleImage(item.product_pic)}`}
                           alt=""
                         />
                       </Col>

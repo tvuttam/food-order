@@ -1,4 +1,8 @@
-import { ADD_TO_CART, ADD_CART_SUCCESS } from "../reducers/actionType";
+import {
+  ADD_TO_CART,
+  ADD_CART_SUCCESS,
+  REMOVE_TO_CART,
+} from "../reducers/actionType";
 import axios from "axios";
 import { config } from "../header";
 
@@ -32,6 +36,32 @@ export const getCart = () => async (dispatch) => {
         console.log("getCart", result);
         if (result.status === 200) {
           dispatch({ type: ADD_CART_SUCCESS, payload: result.data });
+        }
+      })
+      .catch((error) => {
+        console.log("error1", error);
+      });
+  } catch (error) {
+    console.log("error2", error);
+  }
+};
+export const removeCart = (item) => async (dispatch) => {
+  let body = {
+    isInCart: item.isInCart,
+  };
+  console.log("removecartitem", item);
+  try {
+    axios
+      .patch(
+        `${process.env.REACT_APP_API_URL}/cart/delete/${item._id}`,
+        body,
+        config
+      )
+      .then(function (result) {
+        console.log("removeCart", result);
+
+        if (result.status === 200) {
+          dispatch(getCart());
         }
       })
       .catch((error) => {

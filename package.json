@@ -17,6 +17,7 @@
     "react-bootstrap-star-rating": "^3.5.5-alpha.0.3",
     "react-dom": "^18.2.0",
     "react-fa-icon": "^0.1.4",
+    "react-feather": "^2.0.10",
     "react-icons": "^4.7.1",
     "react-pro-sidebar": "^1.0.0",
     "react-rating-stars-component": "^2.2.0",

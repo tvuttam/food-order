@@ -6,7 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { logo } from "../../assets/images";
 import { Image } from "react-bootstrap";
 import "font-awesome/css/font-awesome.min.css";
-import Order from "../order";
+import Order from "../order/order";
 import { BsBarChart } from "react-icons/bs";
 export const Header = () => {
   const [show, setShow] = useState(false);

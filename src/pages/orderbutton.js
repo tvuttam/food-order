@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import Order from "../components/order";
+import {Order} from "../components/index";
 export default function Orderbutton(  ) {
   const [show, setShow] = useState(false);
   const handleClose = () => {

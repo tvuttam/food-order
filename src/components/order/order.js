@@ -4,6 +4,10 @@ import { InputGroup } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useSelector, useDispatch } from "react-redux";
+import { BsCloud } from "react-icons/bs";
+import { removeCart } from "../../redux/action/cartaction";
+
+import { Delete, Plus, Minus } from "react-feather";
 
 function Order({ value, handleClose }) {
   const dispatch = useDispatch();
@@ -16,6 +20,15 @@ function Order({ value, handleClose }) {
       .map((item) => item.product_price * item.qty - 0)
       .reduce((Prev, Next) => Prev + Next);
   console.log("amount", amount);
+
+  const handeleDelate = (item) => {
+    item = {
+      _id: item._id,
+      isInCart: 1,
+    };
+    return dispatch(removeCart(item));
+  };
+
   return (
     <>
       <Offcanvas show={value}>
@@ -46,7 +59,22 @@ function Order({ value, handleClose }) {
                           /> */}
                       </div>
                     </div>
-                    <h4 className="my-auto">{item.qty}</h4>
+                    <div className="ms-auto text-warning d-flex ">
+                      {" "}
+                      <p >
+                        <Plus className="border border-danger rounded-5 bg-danger" 
+                          // onClick={handleIncere}
+                        />
+                      </p>{" "}
+                      <p className="mx-1">
+                        <Minus className="border border-secondary bg-secondary rounded-5 " />
+                      </p>{" "}
+                    </div>
+                    <h3 className="my-auto ms-auto">{item.qty}</h3>
+                    <div className="my-auto text-danger px-2">
+                      {" "}
+                      <Delete onClick={() => handeleDelate(item)} />
+                    </div>
                   </div>
                 </>
               );
@@ -54,18 +82,13 @@ function Order({ value, handleClose }) {
           ) : (
             <div className="d-flex justify-content-between py-3">
               <div className="">
-                <h2></h2>
+                <h2>------</h2>
                 <div>
                   {" "}
-                  <h5 className="text-danger"> </h5>{" "}
-                  {/* <BsThermometer
-                            onClick={() => {
-                              dispatch(removeItem(item._id));
-                            }}
-                          /> */}
+                  <h5 className="text-danger">----</h5>
                 </div>
               </div>
-              <h4 className="my-auto"></h4>
+              <h4 className="my-auto">-------</h4>
             </div>
           )}
 
